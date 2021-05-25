@@ -28,7 +28,7 @@ print(f"""{Fore.RED}
 
 bot = telebot.TeleBot(Token)
 lol = 'lol'
-@bot.message_handler(commands=['spam'])
+@bot.message_handler(commands=['startbot'])
 def auto(message):
     global lol 
     lol = 'lol'
@@ -38,7 +38,7 @@ def auto(message):
         bot.send_message(message.chat.id, hentai)
 
 
-@bot.message_handler(commands=['stop'])
+@bot.message_handler(commands=['bans'])
 def auto(message):
         global lol
         lol = 'nolol'
