@@ -9,6 +9,7 @@ Then, you need to install python and install libraries:
 pip install pyTelegramBotAPI
 pip install colorama
 pip install nekos.py
+pip install requests
 ```
 
 Now, edit the config.ini and insert you token like that:
