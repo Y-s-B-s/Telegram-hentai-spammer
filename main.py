@@ -1,5 +1,6 @@
-import os, configparser, requests, json, telebot, nekos
+import os, configparser, requests, json, telebot, nekos, time
 from colorama import Fore, init
+
 init()
 
 config = configparser.ConfigParser()
@@ -8,12 +9,6 @@ config.read('config.ini')
 Token = config.get("TG-RAIDER", "Token")
 
 
-
-if os.name == "nt":
-        _ = os.system("cls")
-
-else:
-        _ = system("clear")
 
 print(f"""{Fore.RED}
 
@@ -45,5 +40,21 @@ def auto(message):
         print(f"{Fore.RED}[{Fore.WHITE}LOG{Fore.RED}] Спам остановлен")
         bot.send_message(message.chat.id, 'Хентай оверлоад остановлен')
 
+@bot.message_handler(commands=['pink'])
+def auto(message):
+        print(f"{Fore.RED}[{Fore.WHITE}LOG{Fore.RED}] Понг!")
+        bot.send_message(message.chat.id, 'Понг!')
+        
+@bot.message_handler(commands=['keep'])
+def auto(message):
+  while True:
+    bot.send_message(message.chat.id, 'Я жив')
+    time.sleep( 80 )
+        
+try:
+  bot.infinity_polling()
+except Exception:
+  pass
+except KeyboardInterrupt:
+  os.system('exit')
 
-bot.polling(none_stop=True)
